@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Télécharger Astro Labs pour Windows</title>
+<meta name="description" content="Le launcher Astro Labs installe tes jeux, les garde à jour et les lance en un clic. Gratuit, pour Windows 10 et 11.">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:title" content="Télécharger Astro Labs pour Windows">
+<meta property="og:description" content="Tous tes jeux Astro Labs, au même endroit.">
+<meta property="og:image" content="planete.png">
+<style>
+@font-face{font-family:Outfit;font-style:normal;font-weight:300 800;font-display:swap;src:url(outfit-latin.woff2) format('woff2')}
+:root{--bg:#0a0918;--txt:#f4f2ff;--txt2:#cbc6ec;--mute:#8e89b6;--acc:#8b5cf6;--acc2:#a78bfa;--cy:#22d3ee;--line:rgba(255,255,255,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+body{min-height:100vh;color:var(--txt);font:17px/1.55 Outfit,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background:
+    radial-gradient(900px 620px at 78% 30%,rgba(139,92,246,.28),transparent 65%),
+    radial-gradient(700px 480px at 0% 100%,rgba(34,211,238,.12),transparent 60%),
+    radial-gradient(1.3px 1.3px at 40px 60px,rgba(255,255,255,.75),transparent),
+    radial-gradient(1px 1px at 170px 140px,rgba(255,255,255,.5),transparent),
+    radial-gradient(1.5px 1.5px at 250px 30px,rgba(200,190,255,.85),transparent),
+    radial-gradient(1px 1px at 90px 210px,rgba(255,255,255,.45),transparent),
+    var(--bg);
+  background-size:100% 100%,100% 100%,290px 240px,290px 240px,290px 240px,290px 240px,auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc2);outline-offset:4px;border-radius:6px}
+
+.top{max-width:1180px;margin:0 auto;padding:28px 32px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.02em}
+.top img{width:34px;height:34px}
+.dc{margin-left:auto;display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 18px;border-radius:999px;background:#5865f2;color:#fff;font-size:15px;font-weight:600;letter-spacing:0;text-decoration:none;transition:background .15s,transform .15s}
+.dc:hover{background:#4752c4;transform:translateY(-1px)}
+.dc2{color:var(--txt2);text-decoration:none}
+.dc2:hover{color:var(--txt);text-decoration:underline}
+
+.hero{max-width:1180px;margin:0 auto;padding:24px 32px 72px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:24px}
+h1{font-weight:700;font-size:clamp(40px,5.4vw,68px);line-height:1.02;letter-spacing:-.02em;max-width:12ch;text-wrap:balance}
+.lead{margin-top:22px;max-width:34ch;color:var(--txt2);font-size:19px}
+.dl{margin-top:36px;display:inline-flex;align-items:center;gap:14px;height:64px;padding:0 34px 0 28px;border-radius:999px;background:#fff;color:#1d1b33;font-weight:700;font-size:19px;text-decoration:none;box-shadow:0 18px 50px rgba(139,92,246,.45),0 0 0 6px rgba(255,255,255,.06);transition:transform .15s,box-shadow .15s}
+.dl:hover{transform:translateY(-2px);box-shadow:0 22px 60px rgba(139,92,246,.6),0 0 0 6px rgba(255,255,255,.1)}
+.dl svg{flex:none}
+.meta{margin-top:16px;color:var(--mute);font-size:15px}
+
+.planet{position:relative;justify-self:end;width:min(560px,46vw);aspect-ratio:1}
+.planet img{width:100%;height:100%;filter:drop-shadow(0 30px 80px rgba(139,92,246,.45));animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+
+.steps{max-width:1180px;margin:0 auto;padding:56px 32px 40px;border-top:1px solid var(--line)}
+h2{font-weight:700;font-size:28px;letter-spacing:-.01em}
+ol{list-style:none;margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;counter-reset:s}
+li{counter-increment:s}
+li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--acc2);color:var(--acc2);font-weight:700;margin-bottom:16px}
+li h3{font-size:19px;font-weight:600}
+li p{margin-top:6px;color:var(--txt2);font-size:16px;max-width:38ch}
+q{overflow-wrap:anywhere;quotes:"« " " »";color:var(--txt)}
+
+/* Illustration de l'avertissement de Windows (SmartScreen), pour reconnaître l'écran et savoir où cliquer. */
+.ss{margin-top:18px;max-width:330px;border-radius:6px;background:#0f5ea8;color:#fff;padding:16px 16px 14px;font:13px/1.4 "Segoe UI",system-ui,sans-serif;box-shadow:0 14px 34px rgba(0,0,0,.4)}
+.ss b{display:block;font-size:17px;font-weight:600;margin-bottom:6px}
+.ss u{opacity:.9}
+.ss .row{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+.ss span{padding:5px 12px;border:1px solid rgba(255,255,255,.6);font-size:12px}
+.ss .go{background:#fff;color:#0f5ea8;font-weight:600;outline:3px solid #fbbf24;outline-offset:2px}
+footer{max-width:1180px;margin:0 auto;padding:28px 32px 44px;color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 28px}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:0}
+  .planet{grid-row:1;justify-self:center;width:min(320px,72vw)}
+  ol{grid-template-columns:1fr;gap:32px}
+  .dl{width:100%;justify-content:center;padding:0 24px}
+}
+@media (max-width:480px){.dc span{display:none}.dc{padding:0 12px}}
+@media (prefers-reduced-motion:reduce){.planet img{animation:none}.dl,.dc{transition:none}}
+</style>
+</head>
+<body>
+<header class="top"><img src="favicon.png" alt="">Astro Labs
+  <a class="dc" href="https://discord.gg/JpMfTfFgwA" target="_blank" rel="noopener" aria-label="Rejoindre le Discord Astro Labs"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.042-.106 13.11 13.11 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.011c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .079.01c.12.099.246.198.373.292a.077.077 0 0 1-.007.128 12.3 12.3 0 0 1-1.873.891.077.077 0 0 0-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 0 0 .084.029 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.029zM8.02 15.331c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.332-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.332-.946 2.418-2.157 2.418z"/></svg><span>Rejoindre le Discord</span></a>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <h1>Tous tes jeux Astro Labs, au&nbsp;même endroit</h1>
+      <p class="lead">Le launcher installe tes jeux, les garde à jour et les lance en un clic.</p>
+      <a class="dl" id="dl" href="https://github.com/WiikDev/astrolabs-launcher/releases/download/v0.1.1/AstroLabs_0.1.1_x64-setup.exe" download>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Télécharger pour Windows
+      </a>
+      <p class="meta" id="meta">Gratuit, pour Windows 10 et 11. Version 0.1.1, 2,8 Mo.</p>
+    </div>
+    <div class="planet"><img src="planete.png" alt="Planète Astro Labs" width="560" height="560"></div>
+  </section>
+
+  <section class="steps" aria-labelledby="t-steps">
+    <h2 id="t-steps">Installer en trois étapes</h2>
+    <ol>
+      <li>
+        <h3>Télécharge le launcher</h3>
+        <p>Le fichier <q id="fname">AstroLabs_0.1.1_x64-setup.exe</q> arrive dans ton dossier Téléchargements.</p>
+      </li>
+      <li>
+        <h3>Ouvre le fichier</h3>
+        <p>Windows peut afficher cet avertissement, car le launcher est récent. Clique sur <q>Informations complémentaires</q>, puis sur <q>Exécuter quand même</q>.</p>
+        <div class="ss" aria-hidden="true">
+          <b>Windows a protégé votre ordinateur</b>
+          Microsoft Defender SmartScreen a empêché le démarrage d'une application non reconnue.
+          <br><u>Informations complémentaires</u>
+          <div class="row"><span class="go">Exécuter quand même</span><span>Ne pas exécuter</span></div>
+        </div>
+      </li>
+      <li>
+        <h3>Connecte-toi</h3>
+        <p>Crée ton compte avec ton adresse e-mail, ou connecte-toi. Le launcher se met ensuite à jour tout seul.</p>
+      </li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Astro Labs</span>
+  <a class="dc2" href="https://discord.gg/JpMfTfFgwA" target="_blank" rel="noopener">Discord</a>
+</footer>
+
+<script>
+// Lien vers la dernière version publiée ; en cas d'échec, le lien écrit dans la page reste valable.
+fetch('https://api.github.com/repos/WiikDev/astrolabs-launcher/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+  .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+  .then((rel) => {
+    const asset = rel.assets.find((a) => /_x64-setup\.exe$/.test(a.name));
+    if (!asset) return;
+    const version = rel.tag_name.replace(/^v/, '');
+    const size = (asset.size / 1048576).toLocaleString('fr-FR', { maximumFractionDigits: 1 });
+    document.getElementById('dl').href = asset.browser_download_url;
+    document.getElementById('fname').textContent = asset.name;
+    document.getElementById('meta').textContent = `Gratuit, pour Windows 10 et 11. Version ${version}, ${size} Mo.`;
+  })
+  .catch(() => {});
+</script>
+</body>
+</html>
